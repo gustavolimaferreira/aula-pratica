@@ -2,7 +2,7 @@ print("Bem vindo ao sistema de Gustavo Ferreira")
 
 valorBase = float(input("Informe o valor base Plano: "))
 idade = int(input("Informe a idade do cliente: "))
-
+#estrutura condicional para definir a porcentagem conforme a idade
 if idade >= 0 and idade < 19:
     porcentagem = 100/100
 elif idade >= 19 and idade < 29:

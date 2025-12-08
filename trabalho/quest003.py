@@ -1,8 +1,8 @@
 print("Bem vindo a Madeireira do Lenhador Gustavo Ferreira")
 
 total = 0
-
-def escolha_tipo():
+#funções do programa
+def escolha_tipo():#função para escolher o tipo de madeira
     while True:
         madeira = input("\nEntre com o Tipo de Madeira desejado\n PIN - Tora de Pinho\n PER - Tora de Peroba\n MOG - Tora de Mogno\n IPE - Tora de Ipê\n IMB - Tora de Imbuia\n ")
                
@@ -20,7 +20,7 @@ def escolha_tipo():
             print("Escolha inválida, entre com o modelo novamente")
 
 
-def qtd_toras():
+def qtd_toras():#função para escolher a quantidade de toras
     try:
         while True:
             qtdToras = int(input("Entre com a quantidade de toras (m³): "))
@@ -40,7 +40,7 @@ def qtd_toras():
     except ValueError:
         print("Valor invalido! Por favor, insira um numero valido para a quantidade.")
 
-def transporte():
+def transporte():#função para escolher o tipo de transporte
     while True:
         tipoTransporte = input("Escolha o tipo de Transporte:\n1 - Transporte Rodoviário - R$ 1000.00\n2 - Transporte Ferroviario - R$ 2000.00\n3 - Transporte Hidroviário - R$2500.00\n")
 
@@ -52,12 +52,12 @@ def transporte():
             return "Hidroviario", 2500
         else:
             print("Opção invalida! Por favor, digite uma das opções válidas (1, 2 ou 3).")
-
+#programa principal
 tipoMadeira, valorMadeira = escolha_tipo()
 qtdToras, desconto = qtd_toras()
 tipoTransporte, valorTransporte = transporte()
 
-total = ((valorMadeira * qtdToras) * (1 - desconto)) + valorTransporte
+total = ((valorMadeira * qtdToras) * (1 - desconto)) + valorTransporte#calculo do valor total
 
 print(f"\nPedido realizado com sucesso!")
 print(f"Tipo de madeira: {tipoMadeira}\nQuantidade de Toras (m³): {qtdToras}m³\nTransporte escolhido: {tipoTransporte}\nValor total a pagar: R${total:.2f}")
